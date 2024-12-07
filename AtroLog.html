@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./IMG/Icon_AstroLog.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/AstroLog.css">
+    <title>ASTROLOG</title>
+</head>
+<body>
+    <!--
+    <nav>
+        <ul>
+            <li>
+                <a href="./Login.html">Login</a>
+            </li>
+            <li>
+                <a href="#">Eventos Astronômicos</a>
+            </li>
+        </ul>
+    </nav>-->
+    <main>
+        <div class="container">
+            <form action="./JS/AstroLog.js" class="formObs">
+                <h3>Cadastro de Observações Astronômicas</h3>
+                <label for="nomeAutor">Nome de Autoria da Observação:
+                    <input type="text" id="nomeAutor" placeholder="Nome Autor da Observação">
+                </label>
+                <label for="objeto_Observado">Objeto Observado: 
+                    <input type="text" id="objeto_Observado" placeholder="Nome/tipo do Objeto Observado">
+                </label>
+                <label for="localizacao">Localização: 
+                    <input type="text" id="localizacao" placeholder="Localização da Observação">
+                </label>
+                <label for="data">Data:
+                    <input type="date" id="data" placeholder="Data da Observação">
+                </label>
+                <label for="hora">Hora:
+                    <input type="time" id="hora" placeholder="Hora da Observação">
+                </label>
+                <label for="descricao">Descrição do Objeto Observado: 
+                    <textarea id="descricao" rows="4" placeholder="Descreva sua observação aqui"></textarea>
+                </label>
+                <input type="submit" value="Cadastrar Observações">
+                <a href="./Log.html">Voltar para o menu de escolha</a>
+            </form>
+        </div>
+    </main>
+    <script src="./JS/AstroLog.js"></script>
+</body>
+</html>

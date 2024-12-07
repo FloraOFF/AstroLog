@@ -1,0 +1,87 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-image: url(../IMG/indexBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* Define a altura do body como 100% da altura da janela */
+    display: flex;
+}
+
+nav {
+    top: 0;
+    margin-bottom: 2%;
+    background-color: rgb(44, 44, 44);
+}
+
+nav a {
+    float: right;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(117, 173, 211);
+}
+
+nav a:hover {
+    color: rgb(53, 137, 137);
+    background-color: rgb(171, 222, 220);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(91, 155, 167, 0.685);
+    box-sizing: border-box;
+    max-width: 800px;
+    padding: 2%;
+    border-radius: 1rem;
+    color: aliceblue;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+#slogan {
+    text-align: justify;
+    max-width: 95%;
+    margin: 2% auto;
+}
+
+#log {
+    background-color: rgba(2, 2, 2, 0.438);
+    margin: 0;
+    padding: 20px;
+}
+
+#log a {
+    border-radius: 5%;
+    padding: 5px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: rgb(117, 173, 211);
+}
+
+#log a:hover {
+    color: rgb(53, 137, 137);
+    background-color: rgb(171, 222, 220);
+}
+
+.container {
+    text-align: center;
+}
+
+.container img {
+    display: block;
+    margin: 0 auto;
+}
