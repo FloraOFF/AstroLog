@@ -35,14 +35,17 @@ nav a:hover {
 .container {
     display: flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
     text-align: center;
     flex-direction: column;
     background-color: rgba(91, 155, 167, 0.685);
     box-sizing: border-box;
-    max-width: 800px;
+    max-width: 55%;
     padding: 2%;
     border-radius: 1rem;
+}
+
+.container p#log {
     color: aliceblue;
 }
 
@@ -53,9 +56,15 @@ main {
 }
 
 #slogan {
-    text-align: justify;
+    /* text-align: justify; */
     max-width: 95%;
     margin: 2% auto;
+}
+
+p#slogan {
+    color: black;
+    font-weight: bolder;
+    font-style: italic;
 }
 
 #log {
@@ -66,7 +75,7 @@ main {
 
 #log a {
     border-radius: 5%;
-    padding: 5px;
+    padding: 0.2%;
     text-decoration: none;
     color: rgb(0, 0, 0);
     background-color: rgb(117, 173, 211);
