@@ -49,7 +49,7 @@ nav a:hover {
 main {
     display: flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 #slogan {
