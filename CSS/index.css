@@ -40,7 +40,7 @@ nav a:hover {
     flex-direction: column;
     background-color: rgba(91, 155, 167, 0.685);
     box-sizing: border-box;
-    max-width: 55%;
+    max-width: 80%;
     padding: 2%;
     border-radius: 1rem;
 }
