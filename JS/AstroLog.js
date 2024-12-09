@@ -12,16 +12,25 @@ document.addEventListener('DOMContentLoaded', function() {
             descricao: document.getElementById('descricao').value
         }
 
-        let log = JSON.parse(localStorage.getItem("log") || '[]' );
-
-        if(log == null){
+        let log = localStorage.getItem("log");
+        
+        // Verifica se log existe e é uma string válida
+        try {
+            log = log ? JSON.parse(log) : [];
+        } catch (error) {
+            console.error('Erro ao parsear log:', error);
             log = [];
         }
-            log.push(observacao);
-    
-            localStorage.setItem("log", JSON.stringify(log));   
+        
+        log.push(observacao);
 
+        try {
+            localStorage.setItem("log", JSON.stringify(log));   
             window.location.href = "./ShowLog.html";
+        } catch (error) {
+            console.error('Erro ao salvar no localStorage:', error);
+            alert('Não foi possível salvar a observação');
+        }
 
         //arrObserve.add(observacao);
 
