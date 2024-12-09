@@ -48,12 +48,14 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
 
       const deleteButton = document.createElement("button");
       deleteButton.innerText = "Deletar";
+      deleteButton.classList.add("delete");
       deleteButton.addEventListener("click", () => {
         deletarObservacao(id);
       });
 
       const updateButton = document.createElement("button");
       updateButton.innerText = "Atualizar";
+      updateButton.classList.add("update");
       updateButton.addEventListener("click", () => {
         window.location.href = "./UpdateLog.html?id=" + id;
       });
@@ -80,12 +82,14 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "Deletar";
+        deleteButton.classList.add("delete");
         deleteButton.addEventListener("click", () => {
           deletarObservacao(id);
         });
 
         const updateButton = document.createElement("button");
         updateButton.innerText = "Atualizar";
+        updateButton.classList.add("update");
         updateButton.addEventListener("click", () => {
           window.location.href = "./UpdateLog.html?id=" + id;
         });
