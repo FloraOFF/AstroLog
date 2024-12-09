@@ -55,7 +55,7 @@ label #image, textarea {
     background-color: aqua;
 }
 
-input#observationInput {
+button#observationInput {
     font-family: 'Courier New', Courier, monospace;
     background-color: rgba(243, 187, 34, 0.884);
     border: 0;
