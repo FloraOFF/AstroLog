@@ -54,3 +54,12 @@ label #image, textarea {
 .formObs a:hover {
     background-color: aqua;
 }
+
+input#observationInput {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgba(243, 187, 34, 0.884);
+    border: 0;
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
