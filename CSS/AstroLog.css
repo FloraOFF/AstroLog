@@ -21,6 +21,7 @@ h3 {
 label {
     display: block;
     padding-bottom: 1rem;
+    font-weight: 700;
 }
 
 label #image, textarea {
@@ -33,7 +34,7 @@ label #image, textarea {
     display: flex;
     flex-direction: column;
     background-color: rgba(134, 155, 155, 0.781);
-    padding: 2%;
+    padding: 4%;
     border-radius: 2%;
 }
 
@@ -62,4 +63,20 @@ button#observationInput {
     font-size: medium;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+input, textarea{
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(65, 64, 64);
+    padding: 8px;
+}
+
+textarea {
+    width: 500px;
+}
+
+button, a{
+    border-radius: 2px;
+    cursor: pointer;
 }
