@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             descricao: document.getElementById('descricao').value
         }
 
-        let log = JSON.parse(localStorage.getItem("log"));
+        let log = JSON.parse(localStorage.getItem("log") || '[]');
 
         if(log == null){
             log = [];
