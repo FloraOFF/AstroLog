@@ -72,13 +72,13 @@ input, textarea{
     padding: 8px;
 }
 
-/* textarea {
+textarea {
     width: 100%;
     max-width: 100%;
     padding: 8px;
     box-sizing: border-box;  
     resize: vertical;
-} */
+}
 
 button, a{
     border-radius: 2px;
