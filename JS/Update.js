@@ -2,50 +2,52 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const observationId = urlParams.get("id");
-    console.log('Observation ID:', observationId);
 
+    // Verifica se é uma atualização ou uma nova observação
     if (observationId) {
+        // Atualização de observação
+        const observation = getObservationById(observationId);
+        // console.log (observationId);
+        preencherFormulario(observation);
 
-    // Obter os dados da observação com base no ID
-    const observation = getObservationById(observationId);
-    console.log('Observation:', observation);
-
-    // Preencher os campos do formulário com os dados da observação
-    document.getElementById("objeto_Observado").value = observation.objeto;
-    document.getElementById("localizacao").value = observation.local;
-    document.getElementById("data").value = observation.data;
-    document.getElementById("hora").value = observation.hora;
-    document.getElementById("descricao").value = observation.descricao;
-
-    const updateForm = document.getElementById("formAstro");
-    updateForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        console.log('Update form submitted');
-
-        // Obter os valores atualizados do formulário
-        const updatedObservation = {
-            id: observationId,
-            objeto: document.getElementById('objeto_Observado').value,
-            local: document.getElementById('localizacao').value,
-            data: document.getElementById('data').value,
-            hora: document.getElementById('hora').value,
-            descricao: document.getElementById('descricao').value,
-            autor: observation.autor
-        };
-        console.log('Updated Observation:', updatedObservation);
-
-        // Lógica para atualizar a observação com os novos valores
-        atualizarObservacao(updatedObservation);
-        console.log('Observation updated');
-
-        // Redirecionar de volta para a página que mostra todas as observações
-        window.location.href = "./ShowLog.html";
-    });
+        const updateForm = document.getElementById("formAstro");
+        updateForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const updatedObservation = obterDadosFormulario();
+            atualizarObservacao(updatedObservation);
+            window.location.href = "./ShowLog.html";
+        });
     } else {
-        salvarObservacao();
+        // Criação de nova observação
+        const form = document.getElementById("formAstro");
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const novaObservacao = obterDadosFormulario();
+            salvarObservacao(novaObservacao);
+            window.location.href = "./ShowLog.html";
+        });
     }
 });
 
+function preencherFormulario(observacao) {
+    document.getElementById("objeto_Observado").value = observacao.objeto;
+    document.getElementById("localizacao").value = observacao.local;
+    document.getElementById("data").value = observacao.data;
+    document.getElementById("hora").value = observacao.hora;
+    document.getElementById("descricao").value = observacao.descricao;
+}
+
+function obterDadosFormulario() {
+    return {
+        id: observationId || Date.now(),
+        objeto: document.getElementById('objeto_Observado').value,
+        local: document.getElementById('localizacao').value,
+        data: document.getElementById('data').value,
+        hora: document.getElementById('hora').value,
+        descricao: document.getElementById('descricao').value,
+        autor: document.getElementById('nomeAutor').value
+    };
+}
 
 // Função para obter a observação com base no ID
 function getObservationById(id) {
@@ -53,10 +55,13 @@ function getObservationById(id) {
     const dados = JSON.parse(valor);
 
     console.log(dados);
+    console.log (id)
     // Procurar a observação com o ID correspondente
     const observation = Object.values(dados).find((log) => log.id === parseInt(id));
 
-    return observation;
+    console.log (observation)
+
+    return observation || null;
 }
 
 // Função para atualizar a observação com os novos valores
@@ -89,50 +94,33 @@ function atualizarObservacao(updatedObservation) {
     }, 10); // Aguarda 10 milissegundos antes de acessar novamente o localStorage
 }
 
-function salvarObservacao () {
-    document.addEventListener('DOMContentLoaded', function() {
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
+function salvarObservacao (observacao) {
+    let log = localStorage.getItem("log");
     
-            const observacao = {
-                id: Date.now(),
-                autor: document.getElementById('nomeAutor').value,
-                objeto: document.getElementById('objeto_Observado').value,
-                local: document.getElementById('localizacao').value,
-                data: document.getElementById('data').value,
-                hora: document.getElementById('hora').value,
-                descricao: document.getElementById('descricao').value
-            }
+    // Verifica se log existe e é uma string válida
+    try {
+        log = log ? JSON.parse(log) : [];
+    } catch (error) {
+        console.error('Erro ao parsear log:', error);
+        log = [];
+    }
     
-            let log = localStorage.getItem("log");
-            
-            // Verifica se log existe e é uma string válida
-            try {
-                log = log ? JSON.parse(log) : [];
-            } catch (error) {
-                console.error('Erro ao parsear log:', error);
-                log = [];
-            }
-            
-            log.push(observacao);
-    
-            try {
-                localStorage.setItem("log", JSON.stringify(log));   
-                window.location.href = "./ShowLog.html";
-            } catch (error) {
-                console.error('Erro ao salvar no localStorage:', error);
-                alert('Não foi possível salvar a observação');
-            }
-    
-            //arrObserve.add(observacao);
-    
-            //console.log(arrObserve,'oi');
-            //console.log (objeto,local,data,tempo,image);
-            console.log (observacao.objeto, observacao.local, observacao.data, observacao.hora, observacao.img);
-            console.log (log);
-        });
-        
-    });
+    log.push(observacao);
+
+    try {
+        localStorage.setItem("log", JSON.stringify(log));   
+        window.location.href = "./ShowLog.html";
+    } catch (error) {
+        console.error('Erro ao salvar no localStorage:', error);
+        alert('Não foi possível salvar a observação');
+    }
+
+    //arrObserve.add(observacao);
+
+    //console.log(arrObserve,'oi');
+    //console.log (objeto,local,data,tempo,image);
+    console.log (observacao.objeto, observacao.local, observacao.data, observacao.hora, observacao.img);
+    console.log (log);
 }
 
 
