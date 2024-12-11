@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
-    background-image: url(../IMG/indexBackground.jpg);
+    background-image: url(../IMG/indexBackground.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

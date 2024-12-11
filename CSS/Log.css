@@ -6,7 +6,7 @@ body {
     height: 100vh;
     background-color: #f1f1f1;
     overflow: hidden; /* Remover a barra de rolagem */
-    background-image: url(../IMG/LogBackground.jpg);
+    background-image: url(../IMG/LogBackground.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
