@@ -55,11 +55,11 @@ function getObservationById(id) {
     const dados = JSON.parse(valor);
 
     console.log(dados);
-    console.log (id)
+    console.log (id);
     // Procurar a observação com o ID correspondente
     const observation = Object.values(dados).find((log) => log.id === parseInt(id));
 
-    console.log (observation)
+    console.log (observation);
 
     return observation || null;
 }
