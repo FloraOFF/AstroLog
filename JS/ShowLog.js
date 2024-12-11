@@ -67,8 +67,8 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
     } else {
       // Verificar se o autor ou objeto da observação correspondem aos termos de pesquisa
       if (
-        (authorSearchTerm && nome.includes(authorSearchTerm)) ||
-        (objectSearchTerm && obj.includes(objectSearchTerm))
+        (authorSearchTerm && nome.toLowerCase().includes(authorSearchTerm)) ||
+        (objectSearchTerm && obj.toLowerCase().includes(objectSearchTerm))
       ) {
         const logElement = document.createElement("div");
         logElement.classList.add("observacao");
