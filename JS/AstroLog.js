@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const updateForm = document.getElementById("formAstro");
         updateForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            const updatedObservation = obterDadosFormulario();
+            const updatedObservation = obterDadosFormulario({ observationId });
             atualizarObservacao(updatedObservation);
             window.location.href = "./ShowLog.html";
         });
@@ -38,7 +38,10 @@ function preencherFormulario(observacao) {
     document.getElementById('nomeAutor').value = observacao.autor;
 }
 
-function obterDadosFormulario() {
+function obterDadosFormulario({ observationId = null } = {}) {
+    // const observationId = window.observationId || null;
+
+    console.log ("IDDDDDDDD: ",observationId);
     return {
         id: observationId || Date.now(),
         objeto: document.getElementById('objeto_Observado').value,
