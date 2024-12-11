@@ -57,7 +57,7 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
       updateButton.innerText = "Atualizar";
       updateButton.classList.add("update");
       updateButton.addEventListener("click", () => {
-        window.location.href = "./UpdateLog.html?id=" + id;
+        window.location.href = "./AstroLog.html?id=" + id;
       });
 
       logElement.appendChild(deleteButton);
@@ -91,7 +91,7 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
         updateButton.innerText = "Atualizar";
         updateButton.classList.add("update");
         updateButton.addEventListener("click", () => {
-          window.location.href = "./UpdateLog.html?id=" + id;
+          window.location.href = "./AstroLog.html?id=" + id;
         });
 
         logElement.appendChild(deleteButton);
