@@ -47,6 +47,11 @@ body {
     font-weight: 400;
 }
 
+.container div#searchContainer h3{
+    padding: 8px;
+    background-color: rgba(64, 224, 208, 0.466);
+}
+
 .container span {
     display: block;
     margin-top: 1%;
