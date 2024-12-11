@@ -71,6 +71,7 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
         (objectSearchTerm && obj.includes(objectSearchTerm))
       ) {
         const logElement = document.createElement("div");
+        logElement.classList.add("observacao");
         logElement.innerHTML = `
           <h3>Objeto: ${obj}</h3>
           <p>Nome Autor: ${nome}</p>
