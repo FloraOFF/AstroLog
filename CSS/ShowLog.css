@@ -80,3 +80,10 @@ button.delete:hover {
 button.update:hover {
     background-color: rgb(160, 241, 167);
 }
+
+input, textarea{
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgb(65, 64, 64);
+    padding: 8px;
+}
