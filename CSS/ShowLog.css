@@ -58,6 +58,10 @@ body {
     background-color: rgba(64, 224, 208, 0.466);
 }
 
+.container div#searchContainer input {
+    width: 50%;
+}
+
 /* .container span {
     display: flex;
     margin-top: 1%; 
