@@ -19,6 +19,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-image: url(../IMG/ShowBackground.webp);
+    background-image: linear-gradient(transparent, transparent), url(../IMG/ShowBackground.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

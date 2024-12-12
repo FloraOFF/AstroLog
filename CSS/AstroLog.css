@@ -7,6 +7,7 @@ body {
     background-color: #f1f1f1;
     overflow: hidden; /* Remover a barra de rolagem */
     background-image: url(../IMG/AstroLogBackground.webp);
+    background-image: linear-gradient(transparent, transparent), url(../IMG/AstroLogBackground.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

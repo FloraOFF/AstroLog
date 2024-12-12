@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     font-family: 'Courier New', Courier, monospace;
     background-image: url(../IMG/indexBackground.webp);
+    background-image: linear-gradient(transparent, transparent), url(../IMG/indexBackground.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
