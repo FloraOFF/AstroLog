@@ -29,7 +29,7 @@ function renderObservations(observations, searchTerm) {
     const data = log.data;
     const hora = log.hora;
     const descricao = log.descricao;
-    const id = Number(log.id);
+    const id = log.id;
     const nome = log.autor;
 
     // Verificar se os campos de pesquisa estão vazios ou se a observação corresponde aos termos de pesquisa
