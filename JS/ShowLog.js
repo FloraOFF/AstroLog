@@ -2,11 +2,11 @@ const valor = localStorage.getItem("log");
 const dados = JSON.parse(valor);
 
 const showElement = document.getElementById("show");
-const authorSearchInput = document.getElementById("authorSearchInput");
-const objectSearchInput = document.getElementById("objectSearchInput");
+const searchInput = document.getElementById("searchInput");
+// const objectSearchInput = document.getElementById("objectSearchInput");
 
-authorSearchInput.addEventListener("input", handleSearchInput);
-objectSearchInput.addEventListener("input", handleSearchInput);
+searchInput.addEventListener("input", handleSearchInput);
+// objectSearchInput.addEventListener("input", handleSearchInput);
 
 if (dados === null || Object.keys(dados).length === 0) {
   const messageElement = document.createElement("p");
@@ -18,7 +18,7 @@ if (dados === null || Object.keys(dados).length === 0) {
   renderObservations(dados, "", "");
 }
 
-function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
+function renderObservations(observations, searchTerm) {
   const showElement = document.getElementById("show");
   // Limpar o conteúdo existente no elemento "show"
   showElement.innerHTML = "";
@@ -33,7 +33,7 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
     const nome = log.autor;
 
     // Verificar se os campos de pesquisa estão vazios ou se a observação corresponde aos termos de pesquisa
-    if (!authorSearchTerm && !objectSearchTerm) {
+    if (!searchTerm) {
       // Exibir todos os logs quando os campos de pesquisa estão vazios
       const logElement = document.createElement("div");
       logElement.classList.add("observacao");
@@ -68,7 +68,13 @@ function renderObservations(observations, authorSearchTerm, objectSearchTerm) {
       // Verificar se o autor ou objeto da observação correspondem aos termos de pesquisa
       if (
         (authorSearchTerm && nome.toLowerCase().includes(authorSearchTerm)) ||
-        (objectSearchTerm && obj.toLowerCase().includes(objectSearchTerm))
+        nome.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
+        obj.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
+        local.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
+        descricao.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
+        id.toString().includes(authorSearchTerm.toLowerCase()) || // Converte ID para string
+        data.includes(authorSearchTerm) || // Data já é string no JSON
+        hora.includes(authorSearchTerm)
       ) {
         const logElement = document.createElement("div");
         logElement.classList.add("observacao");
@@ -124,8 +130,8 @@ function deletarObservacao(id) {
 }
 
 function handleSearchInput() {
-  const authorSearchTerm = authorSearchInput.value;
-  const objectSearchTerm = objectSearchInput.value;
+  const searchTerm = searchInput.value;
+  // const objectSearchTerm = objectSearchInput.value;
 
-  renderObservations(dados, authorSearchTerm, objectSearchTerm);
+  renderObservations(dados, searchTerm);
 }
