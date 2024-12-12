@@ -39,23 +39,29 @@ body {
 }
 
 .container div#searchContainer {
-    padding: 8px;
+    /* padding: 8px; */
     background-color: rgba(64, 224, 208, 0.466);
 }
 
 .container div#searchContainer span {
     font-weight: 400;
+    margin-left: 15px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    /* height: 45px; */
 }
 
 .container div#searchContainer h3{
+    margin: 0;
     padding: 8px;
     background-color: rgba(64, 224, 208, 0.466);
 }
 
-.container span {
-    display: block;
-    margin-top: 1%;
-}
+/* .container span {
+    display: flex;
+    margin-top: 1%; 
+} */
 
 i {
     margin-right: 10px;
