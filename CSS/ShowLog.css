@@ -57,6 +57,10 @@ body {
     margin-top: 1%;
 }
 
+i {
+    margin-right: 10px;
+}
+
 button {
     background-color: transparent;
     color: black;
@@ -91,4 +95,8 @@ input, textarea{
     border-width: 2px;
     border-color: rgb(65, 64, 64);
     padding: 8px;
+}
+
+label {
+    margin-right: 10px;
 }
