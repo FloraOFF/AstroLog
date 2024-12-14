@@ -52,7 +52,7 @@ function obterDadosFormulario({ observationId = null } = {}) {
 
     console.log ("IDDDDDDDD: ",observationId);
     return {
-        id: observationId || Date.now(),
+        id: observationId ? Number(observationId) : Date.now(),
         objeto: document.getElementById('objeto_Observado').value,
         local: document.getElementById('localizacao').value,
         data: document.getElementById('data').value,

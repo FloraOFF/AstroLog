@@ -67,14 +67,14 @@ function renderObservations(observations, searchTerm) {
     } else {
       // Verificar se o autor ou objeto da observação correspondem aos termos de pesquisa
       if (
-        (authorSearchTerm && nome.toLowerCase().includes(authorSearchTerm)) ||
-        nome.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
-        obj.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
-        local.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
-        descricao.toLowerCase().includes(authorSearchTerm.toLowerCase()) ||
-        id.toString().includes(authorSearchTerm.toLowerCase()) || // Converte ID para string
-        data.includes(authorSearchTerm) || // Data já é string no JSON
-        hora.includes(authorSearchTerm)
+        (searchTerm && nome.toLowerCase().includes(searchTerm)) ||
+        nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        obj.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        local.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        descricao.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        id.toString().includes(searchTerm.toLowerCase()) || // Converte ID para string
+        data.includes(searchTerm) || // Data já é string no JSON
+        hora.includes(searchTerm)
       ) {
         const logElement = document.createElement("div");
         logElement.classList.add("observacao");
