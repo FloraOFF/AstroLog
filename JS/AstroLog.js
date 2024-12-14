@@ -67,10 +67,15 @@ function getObservationById(id) {
     const valor = localStorage.getItem("log");
     const dados = JSON.parse(valor);
 
+    const dadosNumericos = dados.map(item => ({
+        ...item,
+        id: Number(item.id),
+    }));
+
     console.log(dados);
     console.log (id);
     // Procurar a observação com o ID correspondente
-    const observation = Object.values(dados).find((log) => log.id === parseInt(id));
+    const observation = Object.values(dadosNumericos).find((log) => log.id === parseInt(id));
 
     console.log (observation);
 
@@ -82,10 +87,15 @@ function atualizarObservacao(updatedObservation) {
     const valor = localStorage.getItem("log");
     const dados = JSON.parse(valor);
 
-    console.log('Dados antes da atualização:', dados);
+    const dadosNumericos = dados.map(item => ({
+        ...item,
+        id: Number(item.id),
+    }));
+
+    console.log('Dados antes da atualização:', dadosNumericos);
 
     // Encontrar o índice da observação com o ID correspondente
-    const index = Object.values(dados).findIndex((log) => log.id === parseInt(updatedObservation.id));
+    const index = Object.values(dadosNumericos).findIndex((log) => log.id === parseInt(updatedObservation.id));
 
     if (index !== -1) {
         // Atualizar a observação no objeto de dados
@@ -128,6 +138,12 @@ function salvarObservacao (observacao) {
         alert('Não foi possível salvar a observação');
     }
 
+    const observacaoComIdNumerico = {
+        ...observacao,
+        id: Number(observacao.id)
+    };
+    
+    log.push(observacaoComIdNumerico);
     //arrObserve.add(observacao);
 
     //console.log(arrObserve,'oi');
