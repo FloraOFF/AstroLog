@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (observationId) {
         // Atualização de observação
         const observation = getObservationById(observationId);
+        const inputButton = document.getElementById("observationInput");
+        inputButton.innerText = 'Atualizar Observação';
+
+        const showLogButton = document.getElementById("log");
+        showLogButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Ver Observações';
+        showLogButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = "./ShowLog.html";
+        })
         // console.log (observationId);
         preencherFormulario(observation);
 
