@@ -111,3 +111,13 @@ input, textarea{
 label {
     margin-right: 10px;
 }
+
+div#optionDiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#optionDiv > a {
+    margin-right: 10px;
+}
+

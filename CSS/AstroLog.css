@@ -85,3 +85,7 @@ button, a{
     border-radius: 2px;
     cursor: pointer;
 }
+
+i {
+    margin-right: 4px;
+}

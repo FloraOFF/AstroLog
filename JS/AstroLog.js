@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         inputButton.innerText = 'Atualizar Observação';
 
         const showLogButton = document.getElementById("log");
-        showLogButton.innerText = " Ver Observações";
+        showLogButton.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Ver Observações';
         showLogButton.addEventListener('click', function(e) {
             e.preventDefault();
             window.location.href = "./ShowLog.html";
