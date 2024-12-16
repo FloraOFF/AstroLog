@@ -50,7 +50,7 @@ function preencherFormulario(observacao) {
 function obterDadosFormulario({ observationId = null } = {}) {
     // const observationId = window.observationId || null;
 
-    console.log ("IDDDDDDDD: ",observationId);
+    console.log ("IDDDDDDDD: ", observationId);
     return {
         id: observationId ? Number(observationId) : Date.now(),
         objeto: document.getElementById('objeto_Observado').value,
